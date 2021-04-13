@@ -1,7 +1,11 @@
 {
   "name": "ux-cli",
   "version": "1.1.0",
-  "description": "",
+  "description": "ux cli for ux lang. Static html app generator",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/baudo2048/ux-cli.git"
+  },
   "main": "cli.js",
   "bin": {
     "ux": "cli.js"
@@ -18,6 +22,7 @@
     "markdown-it": "^12.0.4",
     "mustache": "^4.2.0",
     "prompt": "^1.1.0",
-    "prompt-sync": "^4.2.0"
+    "prompt-sync": "^4.2.0",
+    "ux-lang": "^1.1.0"
   }
 }
