@@ -11,7 +11,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "copy-dir": "^1.3.0",
     "jsdom": "^16.5.2",
