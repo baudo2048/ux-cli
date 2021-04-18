@@ -1,0 +1,337 @@
+<html><head></head><body>
+<script>
+window.addEventListener('DOMContentLoaded', (event) => {
+    document.head.appendChild(head());
+    window.onload = () => {
+        document.body.appendChild(body());
+    }
+});
+</script>
+<div id="ux-content-md" style="display:none">
+<div id="ux-post-post"># Hello ux-md
+Bla bla bla</div></div>
+<script>function app() 
+{
+var div_0 = document.createElement('div')
+div_0.className= 'container h-100'
+var div_2 = document.createElement('div')
+div_2.className= 'row h100'
+var div_4 = document.createElement('div')
+div_4.append(document.createTextNode( 'Hello'))
+div_4.className= 'row h-25'
+var div_6 = document.createElement('div')
+
+div_2.appendChild(div_4)
+
+div_6.className= 'row h-75'
+var comps = document.createElement('div')
+comps.className= 'col-3'
+var div_10 = document.createElement('div')
+
+div_6.appendChild(comps)
+
+div_10.className= 'col-9'
+var ul_12 = document.createElement('ul')
+ul_12.className= 'nav nav-tabs h-25'
+var li_14 = document.createElement('li')
+li_14.className= 'nav-item'
+var a_16 = document.createElement('a')
+a_16.append(document.createTextNode( 'UX'))
+a_16.className= 'nav-link active'
+a_16.href= '#'
+var li_19 = document.createElement('li')
+
+li_14.appendChild(a_16)
+
+
+ul_12.appendChild(li_14)
+
+li_19.className= 'nav-item'
+var uxBtn = document.createElement('a')
+uxBtn.append(document.createTextNode( 'JS'))
+uxBtn.className= 'nav-link'
+uxBtn.href= '#'
+var li_24 = document.createElement('li')
+
+li_19.appendChild(uxBtn)
+
+
+ul_12.appendChild(li_19)
+
+li_24.className= 'nav-item'
+var previewBtn = document.createElement('a')
+previewBtn.append(document.createTextNode( 'Preview'))
+previewBtn.className= 'nav-link'
+previewBtn.href= '#'
+var preview = document.createElement('textarea')
+
+li_24.appendChild(previewBtn)
+
+
+ul_12.appendChild(li_24)
+
+
+div_10.appendChild(ul_12)
+
+preview.className= 'w-100'
+var previewFunc = document.createElement('div')
+
+div_10.appendChild(preview)
+
+
+div_10.appendChild(previewFunc)
+
+
+div_6.appendChild(div_10)
+
+
+div_2.appendChild(div_6)
+
+
+div_0.appendChild(div_2)
+
+var compDto = {};
+
+document.register('comp-clicked', ev => {
+    document.json('get-comp.php',{compDto:{name:ev.detail}})
+        .then(jdoc => {
+            compDto = jdoc;
+            const ux = JSON.parse(jdoc.jdoc)
+            preview.value = ux.ux;
+        });
+});
+
+document.json('get-comp-names.php')
+    .then(jdoc => {
+        jdoc.forEach(element => {
+            var h = document.createElement('h5');
+            h.textContent = element;
+            h.onclick = ()=>document.em('comp-clicked',element);
+            comps.appendChild(h);
+        });
+
+    })
+
+uxBtn.onclick = (ev)=>{
+    ev.preventDefault();
+    preview.value = JSON.parse(compDto.jdoc).js;
+}
+
+previewBtn.onclick = (ev)=>{
+    ev.preventDefault();
+    let jdoc = JSON.parse(compDto.jdoc);
+    let strFunction = parse(compDto.name,jdoc.ux,jdoc.js);
+    previewFunc.appendChild(eval(strFunction + compDto.name+"();"));
+}
+
+return div_0
+}
+function body() 
+{
+var body = document.createElement('div')
+var app_1 = app()
+
+body.appendChild(app_1)
+
+
+
+return body
+}
+function eventConf() 
+{
+var root = document.createElement('div')
+
+    function dispatch (eventName, msg) {
+        console.log('dispatch - ' + eventName);
+        var detail = {detail: msg};
+        document.dispatchEvent(new CustomEvent(eventName, detail));
+    }
+    
+    // export function dispatch2 (eventName, msg, from, to)
+    
+    function register (eventName, callback){
+        document.addEventListener(eventName, callback);
+    }
+    
+    function unregister (eventName, callback){
+        document.removeEventListener(eventName, callback);
+    }
+    
+    function registerDefault (callback){
+        document.addEventListener(callback.name, callback);
+    }
+    
+    document.registerDefault = registerDefault
+    document.em = dispatch
+    document.register = register
+    document.unregister = unregister
+
+
+
+return root
+}
+function head() 
+{
+var head = document.createElement('div')
+var meta_1 = document.createElement('meta')
+meta_1.charset= 'utf-8'
+var meta_3 = document.createElement('meta')
+
+head.appendChild(meta_1)
+
+meta_3.name= 'viewport'
+meta_3.content= 'width=device-width, initial-scale=1, shrink-to-fit=no'
+var link_6 = document.createElement('link')
+
+head.appendChild(meta_3)
+
+link_6.href= '../assets/css/style.css'
+link_6.rel= 'stylesheet'
+var link_9 = document.createElement('link')
+
+head.appendChild(link_6)
+
+link_9.href= 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css'
+link_9.rel= 'stylesheet'
+link_9.integrity= 'sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6'
+link_9.crossOrigin= 'anonymous'
+var link_14 = document.createElement('link')
+
+head.appendChild(link_9)
+
+link_14.href= 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'
+var script_16 = document.createElement('script')
+
+head.appendChild(link_14)
+
+script_16.src= 'https://unpkg.com/@popperjs/core@2.4.0/dist/umd/popper.min.js'
+var script_18 = document.createElement('script')
+
+head.appendChild(script_16)
+
+script_18.src= 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js'
+script_18.integrity= 'sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf'
+script_18.crossOrigin= 'anonymous'
+var script_22 = document.createElement('script')
+
+head.appendChild(script_18)
+
+script_22.src= 'https://code.jquery.com/jquery-3.2.1.slim.min.js'
+script_22.integrity= 'sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN'
+script_22.crossOrigin= 'anonymous'
+var script_26 = document.createElement('script')
+
+head.appendChild(script_22)
+
+script_26.src= 'https://d3js.org/d3.v6.min.js'
+var script_28 = document.createElement('script')
+
+head.appendChild(script_26)
+
+script_28.src= 'https://d3js.org/d3-dispatch.v2.min.js'
+var script_30 = document.createElement('script')
+
+head.appendChild(script_28)
+
+script_30.src= 'https://d3js.org/d3-selection.v2.min.js'
+var script_32 = document.createElement('script')
+
+head.appendChild(script_30)
+
+script_32.src= 'https://d3js.org/d3-drag.v2.min.js'
+var script_34 = document.createElement('script')
+
+head.appendChild(script_32)
+
+script_34.src= 'https://cdnjs.cloudflare.com/ajax/libs/markdown-it/12.0.4/markdown-it.min.js'
+script_34.integrity= 'sha512-0DkA2RqFvfXBVeti0R1l0E8oMkmY0X+bAA2i02Ld8xhpjpvqORUcE/UBe+0KOPzi5iNah0aBpW6uaNNrqCk73Q=='
+script_34.crossOrigin= 'anonymous'
+var script_38 = document.createElement('script')
+
+head.appendChild(script_34)
+
+script_38.src= '../node_modules/ux-lang/parsers/parserJSFunction_js.js'
+
+head.appendChild(script_38)
+
+eventConf()
+restConf()
+
+return head
+}
+function restConf() 
+{
+var root = document.createElement('div')
+function json(serviceName, msg={}, mode='cors'){
+    const host = 'http://www.circolostudiuniversitari.it/';
+
+    return new Promise( (resolve, reject) => {
+        // prendo i cookie
+        // document.cookie = "user=admin@katecode.com;pass=admin"
+        
+        //document.cookie = "user=admin@katecode.com;pass=admin"
+        //document.cookie = "pass=admi"
+        
+        // *************** Vanilla cookie
+        var props = document.cookie.split(';')
+
+        var user = ''
+        var pass = ''
+
+        props.forEach(v => {
+          var tokens = v.split('=')
+          if(tokens[0]=='user'){
+            user = tokens[1]
+          }
+          if(tokens[0].trim()=='pass'){
+            pass = tokens[1]
+          }
+        })
+        //********************************
+        
+        // npm js-cookie
+        //Cookies.set('user','root')
+        //Cookies.set('pass','root')
+        
+      
+
+        fetch(host+serviceName, {
+            mode: mode, //same-origin
+            method: 'POST', 
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            },
+            body: JSON.stringify(msg) // body data type must match "Content-Type" header
+        }).then( response => {
+            return response.json()
+        }).then(data => {
+            console.log('fetching response ... data is + ' + JSON.stringify(data))
+            //document.eventManager(`${serviceName}.response`, data)
+            resolve(data)
+        }).catch(error => {
+            reject(error)
+        });
+    })
+
+}
+
+document.json = json;
+
+return root
+}
+function snippets() 
+{
+var div_0 = document.createElement('div')
+var link_1 = document.createElement('link')
+link_1.rel= 'stylesheet'
+link_1.href= 'https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css'
+link_1.integrity= 'sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l'
+link_1.crossOrigin= 'anonymous'
+
+div_0.appendChild(link_1)
+
+
+
+return div_0
+}
+</script></body></html>

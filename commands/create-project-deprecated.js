@@ -7,16 +7,18 @@ var copydir = require('copy-dir');
  
 
 
-const templateDir = path.join(__dirname,'..','template')
+const templateDir = path.join(__dirname,'..','templates','basic')
 const currentDir = process.cwd()
 
 const projectName = prompt('projectName (prj-ux): ');
+
 
 
 if(fs.existsSync(path.join(currentDir,projectName))){
   console.log('Already exists a folder "' + projectName + '" please use another projectName')
   return
 }
+
 
 var view = {
     projectName: projectName
@@ -36,7 +38,7 @@ fs.writeFileSync(path.join(currentDir,projectName,'README.md'), fs.readFileSync(
 // js
 // ux
 copydir.sync(path.join(templateDir,'assets'), path.join(currentDir,projectName,'assets'))
-copydir.sync(path.join(templateDir,'css'), path.join(currentDir,projectName,'css'))
+//copydir.sync(path.join(templateDir,'css'), path.join(currentDir,projectName,'css'))
 copydir.sync(path.join(templateDir,'js'), path.join(currentDir,projectName,'js'))
 copydir.sync(path.join(templateDir,'ux'), path.join(currentDir,projectName,'ux'))
 copydir.sync(path.join(templateDir,'md'), path.join(currentDir,projectName,'md'))

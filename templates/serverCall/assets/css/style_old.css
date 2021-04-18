@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.vbox {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.hbox {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+
+.cc {
+  justify-content: center;
+  align-items: center;
+}
+
+/************************************** MENU *************************************/
+
+.ux-menu {
+    background: rgb(60,57,57);
+}
+
+.ux-full-wh {
+    width: 100%;
+    height: 100%;
+}
+
+.ux-full-h {
+  height: 100%;
+}
+
+.ux-menu > span {
+    margin: 5px 5px;
+    padding: 10px;
+    font-family: "Open Sans", "Courier New";
+    font-size: 12px;
+    color: white;   
+}
+
+
+
+/* LOGIN *****************************************/
+.ux-app {
+    display: flex;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #f5f5f5;
+}
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+
+  }
+  
+  .form-signin .checkbox {
+    font-weight: 400;
+  }
+  
+  .form-signin .form-floating:focus-within {
+    z-index: 2;
+  }
+  
+  .form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  
+  .form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  
+
+  /* *******************  SLIDE *********************************/
+  @keyframes showNav {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+  .ux-slide {
+    display: flex;
+    animation: showNav 1000ms ease-in-out both;
+  }

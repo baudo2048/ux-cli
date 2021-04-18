@@ -1,0 +1,32 @@
+div
+    .className container h-100
+    div
+        .className row h100
+        div 'Hello
+            .className row h-25
+        div
+            .className row h-75
+            div comps
+                .className col-3
+            div 
+                .className col-9
+                ul 
+                    .className nav nav-tabs h-25
+                    li
+                        .className nav-item
+                        a 'UX
+                            .className nav-link active
+                            .href #
+                    li
+                        .className nav-item
+                        a uxBtn 'JS
+                            .className nav-link
+                            .href #
+                    li
+                        .className nav-item
+                        a previewBtn 'Preview
+                            .className nav-link
+                            .href #
+                textarea preview
+                    .className w-100
+                div previewFunc
