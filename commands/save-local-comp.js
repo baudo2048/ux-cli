@@ -1,18 +1,19 @@
 const fs = require('fs')
 const path = require('path')
 const prompt = require('prompt-sync')();
-const request = require('request');
 const {getDependencies} = require('ux-lang')
 
 
 const currentDir = process.cwd()
 const uxFolder = path.join(currentDir,'ux')
 const jsFolder = path.join(currentDir,'js')
-const cssFolder = path.join(currentDir,'css')
+
+const uxComplib = path.join(__dirname,'../../ux-comp-lib',)
 
 const compName = prompt('Component Name: ');
 
 // Add to ux-comp-lib if compName doesn't exist
+if(!fs.existsSync(path.join(uxComplib,'ux',compName+'.ux'))){
     
     // Check if compName exists in my-project
     if(fs.existsSync(path.join(currentDir,'ux',compName+'.ux'))){
@@ -28,38 +29,11 @@ const compName = prompt('Component Name: ');
         }
 
         function addCompToUxCompLib(c){
-            var uxContent = fs.readFileSync(path.join(currentDir,'ux',c+'.ux'),'utf8').toString()
-            var jsContent = ''
-            var cssContent = ''
-            if(fs.existsSync(path.join(currentDir,'js',c+'.js'))){
-                jsContent = fs.readFileSync(path.join(currentDir,'js',c+'.js'),'utf8').toString()
-            }
-            if(fs.existsSync(path.join(currentDir,'css',c+'.css'))){
-                cssContent = fs.readFileSync(path.join(currentDir,'css',c+'.css'),'utf8').toString()
-            }
-
-            requestBody = {
-                compDto: {
-                    name: c,
-                    jdoc: {
-                        ux: uxContent,
-                        js: jsContent,
-                        css: cssContent
-                    }
-                }
-            };
+            fs.writeFileSync(path.join(uxComplib,'ux',c+'.ux'), fs.readFileSync(path.join(currentDir,'ux',c+'.ux'),'utf8').toString())
         
-            var options = {
-                json: true,
-                body: requestBody
-            };
-            
-            
-            
-            request.post('http://www.circolostudiuniversitari.it/save-comp.php', options, (err, res, body) => {
-              if (err) { return console.log(err); }
-              console.log("saved");
-            });
+            if(fs.existsSync(path.join(currentDir,'js',c+'.js'))){
+                fs.writeFileSync(path.join(uxComplib,'js',c+'.js'), fs.readFileSync(path.join(currentDir,'js',c+'.js'),'utf8').toString())
+            }
         }
 
         stack.push(compName)
@@ -73,7 +47,9 @@ const compName = prompt('Component Name: ');
     } else {
         console.log('ERROR - Component with name "'+compName+'" doesn\'t exist')    
     }
-
-
+    console.log('Saved.')
+} else {
+    console.log('ERROR - Component with name "'+compName+'" already exists in ux-comp-lib')
+}
 
 

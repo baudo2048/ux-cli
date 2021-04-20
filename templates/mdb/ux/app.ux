@@ -1,5 +1,4 @@
 div
     .className container h-100
     h1 'Hello World
-    *sidebar
 

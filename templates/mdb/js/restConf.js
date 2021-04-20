@@ -1,5 +1,5 @@
 function json(serviceName, msg={}, mode='cors'){
-    const host = 'http://www.circolostudiuniversitari.it/';
+    const host = 'http://localhost:83/';
 
     return new Promise( (resolve, reject) => {
         // prendo i cookie
@@ -29,6 +29,7 @@ function json(serviceName, msg={}, mode='cors'){
         //Cookies.set('user','root')
         //Cookies.set('pass','root')
         
+      
 
         fetch(host+serviceName, {
             mode: mode, //same-origin

@@ -60,7 +60,7 @@ inquirer
   // js
   // ux
   copydir.sync(path.join(templateDir,'assets'), path.join(currentDir,projectName,'assets'))
-  //copydir.sync(path.join(templateDir,'css'), path.join(currentDir,projectName,'css'))
+  copydir.sync(path.join(templateDir,'css'), path.join(currentDir,projectName,'css'))
   copydir.sync(path.join(templateDir,'js'), path.join(currentDir,projectName,'js'))
   copydir.sync(path.join(templateDir,'ux'), path.join(currentDir,projectName,'ux'))
   copydir.sync(path.join(templateDir,'md'), path.join(currentDir,projectName,'md'))
