@@ -1,0 +1,4 @@
+{
+    "folder-type": ["nested","flat"],
+    "bundler-type": ["js","html"]
+}

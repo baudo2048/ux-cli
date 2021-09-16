@@ -1,8 +1,6 @@
-const jsdom = require('jsdom')
 const fs = require('fs')
 const path = require('path')
 const inquirer = require('inquirer');
-const { exit } = require('process');
 
 const { JSDOM } = jsdom;
 
@@ -77,21 +75,17 @@ function scrivi(stackElement){
     } else {
         uxCodeArr.push(spaceTab(tabIndex)+el.tagName + " '" + textNode)
     }
+
+    // 1.bis SCRIVO GLI STYLES
+    Array.from(el.style).map( (x,y) => {
+        uxCodeArr.push(spaceTab(tabIndex+1)+'-'+ camelCase(x) +' '+y);
+    })
     
     // 2. SCRIVO GLI ATTRIBUTI
     el.getAttributeNames().forEach(attr =>{
-        //console.log(typeof attr)
-        if(attr.includes('-')){
-            uxCodeArr.push(spaceTab(tabIndex+1)+'.'+camelCase(attr)+' '+el.getAttribute(attr))
-        } else {
-            if(attr=='class'){
-                uxCodeArr.push(spaceTab(tabIndex+1)+'.'+'className'+' '+el.getAttribute(attr))
-            } else {
-                uxCodeArr.push(spaceTab(tabIndex+1)+'.'+ attr +' '+el.getAttribute(attr))
-            }
-            
-        }
-        
+        if(attr!=='style'){
+            uxCodeArr.push(spaceTab(tabIndex+1)+'.'+ attr +' '+el.getAttribute(attr))      
+        } 
     })
     
     return

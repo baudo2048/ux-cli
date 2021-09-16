@@ -1,0 +1,6 @@
+div
+    -color blue
+    h1 'Hello World
+    p 'Welcome to UX static generator
+        .class border
+

@@ -50,10 +50,10 @@ fs.readdirSync(uxFolder).forEach(file => {
     var cssContent = ''
     if(fs.existsSync(path.join(cssFolder,file.slice(0,-3)+'.css'))){
         cssContent = fs.readFileSync(path.join(cssFolder,file.slice(0,-3)+'.css')).toString()
-        cssArr.push(cssContent)
+        //cssArr.push(cssContent)
     }
 
-    scriptsArr.push(parserJSFunction(file.slice(0,-3),uxContent,jsContent,''))
+    scriptsArr.push(parserJSFunction(file.slice(0,-3),uxContent,jsContent,cssContent))
 });
 
 
@@ -64,12 +64,12 @@ scriptsArr.forEach(v => {
 })
 html.window.document.body.appendChild(scriptTag)
 
-var styleTag = html.window.document.createElement('style')
-styleTag.textContent = ''
-cssArr.forEach(v=>{
-    styleTag.textContent += v
-})
-html.window.document.body.appendChild(styleTag)
+// var styleTag = html.window.document.createElement('style')
+// styleTag.textContent = ''
+// cssArr.forEach(v=>{
+//     styleTag.textContent += v
+// })
+// html.window.document.body.appendChild(styleTag)
 
 // md content
 if(fs.existsSync(mdFolder)){

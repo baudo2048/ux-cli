@@ -24,6 +24,7 @@ List of commands:
 ```
 add-comp
 bundler-html
+bundler-js
 create-project
 dev-listener
 list-comps
@@ -96,3 +97,6 @@ Things are made easy because we want get to the point and we want understand wha
 - Extends server architecture
 - Create and publish new components
 - Create vs code extension for ux ecosystem
+
+# Todo
+- Create new-project on current folder

@@ -19,13 +19,7 @@ div head
         .rel stylesheet
         .href https://fonts.googleapis.com/icon?family=Material+Icons
 
-    link
-        .href ../assets/css/ux.css
-        .rel stylesheet     
-    link
-        .href ../assets/css/style.css
-        .rel stylesheet 
-        
+      
     script
         .src https://unpkg.com/@popperjs/core@2.4.0/dist/umd/popper.min.js
     script
@@ -54,7 +48,5 @@ div head
         .integrity sha512-0DkA2RqFvfXBVeti0R1l0E8oMkmY0X+bAA2i02Ld8xhpjpvqORUcE/UBe+0KOPzi5iNah0aBpW6uaNNrqCk73Q==
         .crossOrigin anonymous
 
-    script
-        .src ../assets/js/ux.js
 
     title 'UX Basic Bootstrap Template

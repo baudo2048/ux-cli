@@ -10,7 +10,7 @@ const path = require('path')
 if(fs.existsSync(path.join(__dirname,'commands',process.argv[2]+'.js'))){
     require('./commands/'+process.argv[2])
 } else {
-    console.log("Command doesn't exist")
+    console.log(`UX CLI ERROR. ${process.argv[2]} command doesn't exist`)
 
     // Qui per creare l'help
     // per ogni file in commands/ leggo il file e ne prendo la descrizione
