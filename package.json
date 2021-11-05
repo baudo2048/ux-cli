@@ -26,6 +26,6 @@
     "prompt": "^1.1.0",
     "prompt-sync": "^4.2.0",
     "request": "^2.88.2",
-    "ux-lang": "^1.4.0"
+    "ux-lang": "^1.4.1"
   }
 }
