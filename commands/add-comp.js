@@ -1,6 +1,6 @@
 // Questo è quello con il trucco attenzione ai sotto componenti
 // prima di partire controllare se nella folder del progetto è tutta libera
-// per tutti i componenti
+// per tutti i componenti.
 
 const fs = require('fs')
 const path = require('path')
