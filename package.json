@@ -1,6 +1,6 @@
 {
   "name": "ux-cli",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "description": "ux cli for ux lang. Static html app generator",
   "repository": {
     "type": "git",

@@ -1,0 +1,50 @@
+div head
+    meta
+        .charset utf-8
+    meta
+        .name viewport
+        .content width=device-width, initial-scale=1, shrink-to-fit=no
+    meta 
+        .http-equiv x-ua-compatible
+        .content ie=edge
+        
+    link
+        .href https://use.fontawesome.com/releases/v5.15.2/css/all.css
+        .rel stylesheet
+    link
+        .href https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap
+        .rel stylesheet
+        
+    link
+        .href ../assets/css/ux.css
+        .rel stylesheet     
+    link
+        .href ../assets/css/style.css
+        .rel stylesheet            
+
+    script
+        .src https://unpkg.com/@popperjs/core@2.4.0/dist/umd/popper.min.js
+    script
+        .src https://code.jquery.com/jquery-3.2.1.slim.min.js
+        .integrity sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN
+        .crossOrigin anonymous
+
+    script 
+        .src https://d3js.org/d3.v6.min.js
+    script 
+        .src https://d3js.org/d3-dispatch.v2.min.js
+    script
+        .src https://d3js.org/d3-selection.v2.min.js
+    script 
+        .src https://d3js.org/d3-drag.v2.min.js
+
+    script
+        .src https://cdnjs.cloudflare.com/ajax/libs/markdown-it/12.0.4/markdown-it.min.js
+        .integrity sha512-0DkA2RqFvfXBVeti0R1l0E8oMkmY0X+bAA2i02Ld8xhpjpvqORUcE/UBe+0KOPzi5iNah0aBpW6uaNNrqCk73Q==
+        .crossOrigin anonymous
+
+    script 
+        .src ../assets/js/mdb.min.js
+        .type text/javascript
+
+    title 'Basic UX Template
