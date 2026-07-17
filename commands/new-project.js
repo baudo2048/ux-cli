@@ -54,8 +54,8 @@ inquirer
   fs.writeFileSync(path.join(currentDir,projectName,'package.json'), packageFileOutput)
   fs.writeFileSync(path.join(currentDir,projectName,'index.js'), fs.readFileSync(path.join(templateDir,'index.js'),'utf8').toString())
   fs.writeFileSync(path.join(currentDir,projectName,'README.md'), fs.readFileSync(path.join(templateDir,'README.md'),'utf8').toString())
-  fs.writeFileSync(path.join(currentDir,projectName,'.gitignore'), fs.readFileSync(path.join(templateDir,'.gitignore'),'utf8').toString())
-  fs.writeFileSync(path.join(currentDir,projectName,'LICENSE'), fs.readFileSync(path.join(templateDir,'LICENSE'),'utf8').toString())   
+  //fs.writeFileSync(path.join(currentDir,projectName,'.gitignore'), fs.readFileSync(path.join(templateDir,'.gitignore'),'utf8').toString())
+  //fs.writeFileSync(path.join(currentDir,projectName,'LICENSE'), fs.readFileSync(path.join(templateDir,'LICENSE'),'utf8').toString())   
 
 
   // assets copy ricorsivo
@@ -70,6 +70,5 @@ inquirer
   copydir.sync(path.join(templateDir,'ux'), path.join(currentDir,projectName,'ux'))
   copydir.sync(path.join(templateDir,'md'), path.join(currentDir,projectName,'md'))
   copydir.sync(path.join(templateDir,'dist'), path.join(currentDir,projectName,'dist'))
-  copydir.sync(path.join(templateDir,'dist'), path.join(currentDir,projectName,'services'))
 });
 
